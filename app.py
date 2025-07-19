@@ -9,7 +9,7 @@ import base64
 from gtts import gTTS
 import tempfile
 
-from pydub import AudioSegment
+# from pydub import AudioSegment
 import cv2
 import time
 import numpy as np
@@ -212,10 +212,10 @@ def convert_audio_to_wav(audio_bytes):
         
         try:
             logger.debug("Attempting to read audio file")
-            audio = AudioSegment.from_mp3(tmp_mp3_filename)
+            # audio = AudioSegment.from_mp3(tmp_mp3_filename)
         except:
             logger.debug("MP3 read failed, trying generic file reading")
-            audio = AudioSegment.from_file(tmp_mp3_filename)
+            # audio = AudioSegment.from_file(tmp_mp3_filename)
         
         logger.debug("Setting audio frame rate and channels")
         audio = audio.set_frame_rate(VAD_SAMPLING_RATE).set_channels(1)
@@ -234,6 +234,9 @@ def convert_audio_to_wav(audio_bytes):
     except Exception as e:
         logger.error(f"Error converting audio to WAV: {str(e)}")
         return None
+
+
+
 
 def process_audio_with_vad(audio_bytes):
     """
@@ -599,9 +602,10 @@ def text_to_speech(text):
         tts.save(temp_filename)
         logger.debug(f"TTS saved to temporary file: {temp_filename}")
         
-        audio = AudioSegment.from_mp3(temp_filename)
+        # audio = AudioSegment.from_mp3(temp_filename)
         wav_filename = temp_filename.replace('.mp3', '.wav')
-        audio.export(wav_filename, format="wav")
+
+        # audio.export(wav_filename, format="wav")
         logger.debug(f"Converted to WAV format: {wav_filename}")
         
         with open(wav_filename, 'rb') as f:
