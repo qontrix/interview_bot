@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Dashboard{% endblock %}</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+ 
+        /* Sidebar styling */
+        .sidebar {
+            width: 240px;
+            background-color: rgb(242, 242, 242);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+        }
+ 
+        .sidebar h2 {
+            font-size: 1.4rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: black; /* header text black for readability */
+        }
+ 
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+ 
+        .sidebar a {
+            color: white; /* white text for contrast */
+            text-decoration: none;
+            padding: 12px 15px;
+            background-color: rgb(199, 36, 59); /* corrected RGB color */
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            font-weight: normal;
+        }
+ 
+        .sidebar a:hover,
+        .sidebar a.active {
+            background-color: rgb(179, 30, 53); /* slightly darker on hover */
+            font-weight: bold;
+            color: white;
+        }
+ 
+        .sidebar .logout a {
+        display: block;
+        width: 90%;
+        margin: 10px 0;
+        padding: 12px 15px;
+        background-color: rgb(199, 36, 59);
+        color: white;
+        border-radius: 6px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+        }
+ 
+        .sidebar .logout a:hover {
+        background-color: rgb(179, 30, 53);
+        }
+ 
+        /* Main content area */
+        .content-wrapper {
+            margin-left: 240px; /* sidebar width */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+ 
+        .content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            background-color: #F3F4F6;
+            /* add this line: */
+            margin-left: 240px;    /* ← push it right of the 240px-wide sidebar */
+        }
+ 
+        /* Header and footer styling */
+        header {
+            background-color: rgb(199, 36, 59);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+ 
+        footer {
+            background: none;           /* remove red bar */
+            color: red;                 /* red text only */
+            padding: 10px 0;            /* slim spacing */
+            font-size: 0.9rem;
+            font-weight: normal;
+            box-shadow: none;
+            text-align: center;
+            margin-left: 240px;         /* keep it aligned with your content */
+        }
+    </style>
+    {% block head %}{% endblock %}
+</head>
+<body>
+ 
+    <div class="sidebar">
+        <div>
+            <h2 style="display:flex; align-items:center; gap:8px; font-size:1.2rem;">
+              <img src="{{ url_for('static', filename='images/Jetking_Logo.png') }}"
+                   alt="Jetking Logo"
+                   style="height:40px;">
+              InterviewBot
+            </h2>
+            <div class="nav-links">
+                <a href="/interview" …>Interview Bot</a>
+                <a href="/dashboard" …>Dashboard</a>
+            </div>
+        </div>
+        <div class="logout">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+ 
+ 
+ 
+ 
+        <div class="content">
+        <div style="text-align: right; margin-bottom: 10px; font-weight: bold; color: #374151;">
+                Welcome, {{ user_name }}
+        </div>
+            {% block content %}{% endblock %}
+        </div>
+ 
+        <footer style="background: none; color: red; text-align: center; padding: 10px 0;">
+        © Jetking Institute. All rights reserved.
+        </footer>
+    </div>
+ 
+</body>
+</html>
+ 
+ 

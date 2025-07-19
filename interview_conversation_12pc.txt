@@ -1,0 +1,10 @@
+bot: Could you start by telling us a little about your recent project at TechJar Technologies, particularly the secure file processing system you developed?
+user: I'm not sure about that.
+bot: In your role, you've worked extensively with Python for various applications. Can you explain how you've used Python's Pandas library for data cleaning in any of your projects?
+user: I'm not sure. Hello.
+bot: You've built dashboards using Power BI. Could you walk us through the process of how you set up a dashboard to track real-time metrics and what key performance indicators (KPIs) you focused on for the dashboard you designed at Jetking?
+user: I don't know about Jet King and all these things, all that.
+bot: Seeing as you have experience with MySQL, can you describe a scenario where you optimized a MySQL query for better performance, perhaps during the development of the Core Integra system?
+user: I'm not sure.
+bot: Reflecting on a time when a project did not go as planned, how did you handle the situation? What steps did you take to rectify the issue and ensure successful project delivery?
+user: Ha ha.

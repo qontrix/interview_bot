@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# PyCharm
+.idea/
+
+# Flask instance folder
+instance/
+
+# SQLite DB (if used)
+*.sqlite3
+
+# Compiled files
+*.egg-info/
+*.egg
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# mypy
+.mypy_cache/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Test outputs
+test-results/
+
+# Pipenv
+Pipfile.lock
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Render local settings
+.render/

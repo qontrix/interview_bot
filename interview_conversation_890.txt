@@ -1,0 +1,10 @@
+bot: Can you tell us a little about yourself and what motivated you to apply for the VOIP/NOC Engineer position at Eurus?
+user: I don't know.
+bot: What is Voice over IP (VoIP) and how does it differ from traditional telecommunication systems like TDM?
+user: I'm not sure.
+bot: Could you explain what SIP (Session Initiation Protocol) is and why it's important in VoIP services?
+user: I'm not sure.
+bot: As a VOIP/NOC engineer, you may encounter network issues. What steps would you take to troubleshoot a basic connectivity problem in our VoIP network?
+user: I don't know bout that.
+bot: Describe a time when you had to provide technical support under pressure. How did you handle the situation and what was the outcome?
+user: I don't know about any outcome.

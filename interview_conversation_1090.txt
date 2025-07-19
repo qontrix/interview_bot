@@ -1,0 +1,10 @@
+bot: Can you start by sharing how your experience and projects at Medibank Healthcare and Matco Tools have prepared you for this role, particularly in terms of your work with Microsoft Dynamics 365 and the Power Platform?
+user: Sorry, I'm not sure about it.
+bot: In your role at Medibank Health Care, you implemented a custom Dynamics 365 solution to streamline the nurse triage process. Can you describe how you approached customizing Dynamics 365 to fit the specific needs of the healthcare sector, and what challenges you faced during this customization?
+user: I'm not sure.
+bot: You've developed a Lead Management Sales App using custom plugins in C#. Could you walk us through your process for designing these plugins and how you ensured they efficiently handled lead assignment, scoring, and notifications without impacting system performance?
+user: I don't know. I don't know.
+bot: Given your experience with extending the functionality of Dynamics 365 using JavaScript, could you provide an example of a client-side enhancement you implemented and explain how it improved the user experience or resolved a specific issue?
+user: I'm not sure.
+bot: Reflecting on your time managing post-deployment support at Matco Tools, can you share an experience where you had to handle significant user feedback? How did you prioritize this feedback and incorporate it into further system enhancements?
+user: I don't know about it.

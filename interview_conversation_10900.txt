@@ -1,0 +1,20 @@
+bot: Tell us about yourself and your background.
+bot: Tell us about yourself and your background.
+bot: Tell us about yourself and your background.
+bot: Can you tell us about your experience with database design and ETL processes?
+user: I'm not sure.
+bot: How would you approach developing a secure file processing system using Python and MySQL for multi-file uploads with progress tracking?
+user: I don't know about it.
+bot: How would you approach developing a secure file processing system using Python and MySQL for multi-file uploads with progress tracking?
+user: You don't know about that.
+bot: How would you approach developing a secure file processing system using Python and MySQL for multi-file uploads with progress tracking?
+bot: Can you walk me through your experience working as a Data Analyst at TechJar technologies and your key achievements in building secure file processing systems and AI-powered interview bots?
+user: I'm not sure about it.
+bot: In your project Core Integra - Secure Document Processing System, how did you ensure data compliance with industry standards like GDPR and VAPT while building the secure file processing system using Python Streamlit and MySQL?
+user: I don't know about that.
+bot: Could you explain the process and technologies you used to develop the AI-driven interview bot in the project Interview Bot, specifically focusing on the integration of Flask, GPT-4, and speech recognition?
+user: I don't know about it. I really don't know.
+bot: In your role as an Analytics Consultant at ETLhive, how did you automate ETL workflows to improve data processing efficiency by 25% and build predictive models in Python to enhance the accuracy of insights?
+user: I'm not sure.
+bot: Can you tell me about a challenging situation you faced while working on a project and how you effectively resolved it, showcasing your problem-solving skills and ability to handle pressure?
+user: I don't know about it. I don't know.

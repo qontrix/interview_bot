@@ -1,0 +1,20 @@
+bot: Can you introduce yourself and describe a project or accomplishment you are particularly proud of from your recent professional experience?
+user: I don't know about this.
+bot: You've mentioned developing secure file processing systems using Python Streamlit and MySQL. Could you explain the architecture of these systems and how you handled multi-file uploads and data masking?
+user: I I don't know about it.
+bot: In your role, you've built AI-powered interview bots using Flask and GPT-4. Could you discuss how you integrated speech recognition with GPT-4 to simulate interactive interviews, and what challenges you faced during the development?
+user: I'm not sure about that.
+bot: You have experience in creating predictive analytics models. Can you walk us through the process of how you developed one of these models, including the type of data you used, the statistical techniques applied, and how the model's performance was evaluated?
+user: I'm not sure about it.
+bot: Describe a time when you had to adapt quickly to a significant change in a project or your work environment. How did you handle it, and what was the outcome?
+user: I don't know about that.
+bot: Can you start by telling us a bit about your recent project on developing an AI-driven interview bot and what role you played in its creation?
+user: I'm not sure.
+bot: You've worked with Python for various projects. Could you explain how you have used Python for data cleaning or ETL processes in any of your previous roles?
+user: I'm not sure about it.
+bot: Considering your experience with Power BI, can you walk us through the steps you take to create an interactive dashboard and how you ensure it meets the user's requirements?
+user: I'm not sure about it.
+bot: You have experience in both backend and frontend development. Can you describe a simple web application you have developed using Flask and how you handled user inputs and data storage?
+user: I'm not sure about it.
+bot: Tell us about a time when you had to learn a new tool or technology quickly to complete a project. How did you approach the learning process, and what was the outcome of the project?
+user: Sorry, I'm not sure about.

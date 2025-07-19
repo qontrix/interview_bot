@@ -1,0 +1,1 @@
+bot: Can you start by telling us a little bit about your journey into data analysis and what motivated you to specialize in Python development, ETL pipelines, and interactive dashboards?

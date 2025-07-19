@@ -1,0 +1,6 @@
+bot: Tell us about yourself.
+user: Professional with hands on experience in landline support, windows service management and firewall configuration. I'm a CCNA and CCNM certified skilled in router routing, switching and network troubleshooting. I've worked extensively with cloud based audio. Your streaming and I've also contributed to DevOps and level 2 support tasks.
+bot: What programming languages do you know?
+user: My core focus is networking and infrastructure, and I've been working on the knowledge of scripting languages like PowerShell and bash for automation tasks and some experience in Python for writing small utilities and automation scripts.
+bot: Explain a basic project you've worked on.
+user: One key project I worked on was upgrading the network infrastructure across multiple branch offices. I was responsible for configuring Cisco routers and switches and implementing LAN and AC LS, setting up fortunate firewalls for secure connectivity. I also configured services like DHCP and. VPN gateways on Windows Server, ensuring minimal downtime. The project improved overall network performance and security, and I documented the future. I documented the process for future orders.

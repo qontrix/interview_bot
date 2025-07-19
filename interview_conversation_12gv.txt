@@ -1,0 +1,10 @@
+bot: Can you start by telling us a little about yourself and what led you to specialize in Python development and data analytics?
+user: I'm not sure.
+bot: As a beginner in Python, how would you write a simple script to read a CSV file and print the first five rows of the dataframe using Python's pandas library?
+user: I'm not sure. What a.
+bot: Can you explain what ETL stands for and describe a basic ETL process you might set up for a small-scale data project?
+user: I don't know about that.
+bot: In Power BI, how would you go about creating a simple dashboard to visualize data from an Excel spreadsheet? Could you outline the steps you'd follow?
+user: I don't know about that.
+bot: Describe a situation where you had to learn a new tool or technology quickly to complete a project or task. How did you approach this challenge and what was the outcome?
+user: I'm not sure.

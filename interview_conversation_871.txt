@@ -1,0 +1,22 @@
+bot: Tell us about yourself and your background.
+bot: Can you briefly introduce yourself and explain what inspired you to pursue a career in data analysis, particularly focusing on Python development and ETL pipelines?
+bot: Tell us about yourself and your background.
+bot: Tell us about your technical background and experience.
+user: I'm not sure.
+bot: Explain a technical concept you're comfortable with in detail.
+user: I don't know about it.
+bot: Describe a project where you implemented a technical solution.
+user: I am not sure.
+bot: How do you approach learning new technologies?
+bot: Can you tell us a bit about your experience with data analysis tools and which one you find most effective for your work?
+user: I'm sorry, I'm not charred.
+bot: In SQL, what are the advantages of using subqueries over joins, and can you provide an example where using a subquery would be more efficient than a join?
+user: I don't know about it.
+bot: In Excel, how do you use array formulas, and could you give an example where an array formula is necessary to solve a problem?
+user: I don't know about it.
+user: I don't know about it. Sorry, I'm not sure.
+bot: Can you describe the process of setting up a dashboard in Power BI, and what considerations do you make for ensuring it remains performant as data scales up?
+bot: Can you describe the process of setting up a dashboard in Power BI, and what considerations do you make for ensuring it remains performant as data scales up?
+user: I'm not sure.
+bot: Describe a situation where you had to collaborate with other departments to gather and analyze data. What were the challenges, and how did you overcome them?
+user: I am not sure.

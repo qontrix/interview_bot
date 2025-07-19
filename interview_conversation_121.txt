@@ -1,0 +1,13 @@
+bot: Can you briefly introduce yourself and describe how your previous experiences have prepared you for the role of Business Analyst in our global systems transformation programme, particularly focusing on the Events and Food & Beverage sectors?
+user: I don't know about it.
+user: I don't know about it. I don't know.
+bot: Given your experience, can you walk us through your approach to gathering and analyzing business requirements in large-scale hospitality projects? Please specify any particular methodologies or tools you have found effective in this context.
+user: Nah, I don't work on anything like that. I am a fresher. Dedicated scalability and security setup for the application development text thing.
+user: Nah, I don't work on anything like that. I am a fresher. Dedicated scalability and security setup for the application development text thing. Man, I'm a fresher. I don't have this great experience right now.
+bot: In previous roles, how have you handled the challenge of mapping out complex business processes and identifying areas for improvement within the hospitality industry? Could you provide a specific example, including the outcomes?
+bot: In previous roles, how have you handled the challenge of mapping out complex business processes and identifying areas for improvement within the hospitality industry? Could you provide a specific example, including the outcomes?
+user: No, I don't know about.
+bot: Discuss a time when you had to act as a liaison between business and technical teams. What strategies did you employ to ensure that business needs were accurately translated into functional requirements?
+user: I don't know about it.
+bot: Describe a situation where you faced significant pressure or competing priorities in a project. How did you manage your responsibilities, and what was the impact of your actions on the project outcome?
+user: I don't manage anything.

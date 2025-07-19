@@ -1,0 +1,2 @@
+bot: Can you introduce yourself and briefly describe your most recent project involving Python and ETL pipelines?
+bot: Tell us about yourself and your background.

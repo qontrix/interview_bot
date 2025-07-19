@@ -1,0 +1,10 @@
+bot: Can you tell us a bit about yourself and what motivated you to apply for the Junior Technical Support Engineer position at Lepide?
+user: I'm not sure.
+bot: As a Junior Technical Support Engineer, you might encounter basic troubleshooting issues. Could you describe the steps you would take to diagnose and solve a simple connectivity problem in a corporate network?
+user: I'm not sure.
+bot: Given your role will involve working with our Data Security Platform, can you explain what data-centric audit and protection mean and why it is important in today's IT security landscape?
+user: I don't know about that.
+bot: Imagine a customer has reported a slow performance issue with their data security application. How would you approach this problem initially, and what basic checks would you perform?
+user: I'm not sure about it. I don't know.
+bot: Describe a time when you had to learn a new technology or software tool quickly to complete a project or task. How did you manage your learning process, and what was the outcome?
+user: I'm not sure about it.
