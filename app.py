@@ -9,7 +9,7 @@ import base64
 from gtts import gTTS
 import tempfile
 
-from pydub import AudioSegment
+
 import cv2
 import time
 import numpy as np
@@ -198,36 +198,48 @@ def extract_text_from_file(file):
         logger.error(f"Error extracting text from file: {str(e)}")
         return None
 
+import subprocess
+import tempfile
+
 def convert_audio_to_wav(audio_bytes):
     try:
-        logger.debug("Starting audio conversion to WAV format")
-        with tempfile.NamedTemporaryFile(suffix='.mp3', delete=False) as tmp_mp3:
+        logger.debug("Starting audio conversion to WAV using ffmpeg subprocess")
+
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp_mp3:
             tmp_mp3.write(audio_bytes)
-            tmp_mp3_filename = tmp_mp3.name
-        
-        try:
-            logger.debug("Attempting to read audio file")
-            audio = AudioSegment.from_mp3(tmp_mp3_filename)
-        except:
-            logger.debug("MP3 read failed, trying generic file reading")
-            audio = AudioSegment.from_file(tmp_mp3_filename)
-        
-        logger.debug("Setting audio frame rate and channels")
-        audio = audio.set_frame_rate(VAD_SAMPLING_RATE).set_channels(1)
-        
-        with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as tmp_wav:
-            logger.debug("Exporting to WAV format")
-            audio.export(tmp_wav.name, format="wav")
-            with open(tmp_wav.name, 'rb') as f:
-                wav_data = f.read()
-        
-        logger.debug("Cleaning up temporary files")
-        os.unlink(tmp_mp3_filename)
-        os.unlink(tmp_wav.name)
-        logger.debug("Audio conversion completed successfully")
+            tmp_mp3.flush()
+            tmp_mp3_path = tmp_mp3.name
+
+        tmp_wav = tempfile.NamedTemporaryFile(delete=False, suffix=".wav")
+        tmp_wav_path = tmp_wav.name
+        tmp_wav.close()
+
+        # Build ffmpeg command
+        command = [
+            "ffmpeg",
+            "-y",  # overwrite output files
+            "-i", tmp_mp3_path,
+            "-ar", str(VAD_SAMPLING_RATE),
+            "-ac", "1",  # mono
+            tmp_wav_path
+        ]
+
+        subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
+
+        with open(tmp_wav_path, "rb") as f:
+            wav_data = f.read()
+
+        os.unlink(tmp_mp3_path)
+        os.unlink(tmp_wav_path)
+
+        logger.debug(f"Audio conversion completed, WAV size: {len(wav_data)} bytes")
         return wav_data
+
+    except subprocess.CalledProcessError as e:
+        logger.error(f"ffmpeg conversion failed: {e.stderr.decode()}")
+        return None
     except Exception as e:
-        logger.error(f"Error converting audio to WAV: {str(e)}")
+        logger.error(f"Error converting audio to WAV: {str(e)}", exc_info=True)
         return None
 
 
