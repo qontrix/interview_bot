@@ -9,7 +9,7 @@ import base64
 from gtts import gTTS
 import tempfile
 
-# from pydub import AudioSegment
+from pydub import AudioSegment
 import cv2
 import time
 import numpy as np
@@ -60,15 +60,10 @@ from openai import OpenAI
 
 
 # OpenAI API Configuration
-# openai.api_key = "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"
-openai.api_base = "https://api.openai.com/v1"
+import os
+from openai import OpenAI
 
-
-
-# If you're using environment variable, make sure it's set
-api_key = os.getenv("OPENAI_API_KEY") or "your-openai-api-key-here"
-
-# Initialize OpenAI client
+api_key = os.getenv("OPENAI_API_KEY") or "sk-your-fallback-key"
 client = OpenAI(api_key=api_key)
 
 # Snowflake credentials
@@ -212,10 +207,10 @@ def convert_audio_to_wav(audio_bytes):
         
         try:
             logger.debug("Attempting to read audio file")
-            # audio = AudioSegment.from_mp3(tmp_mp3_filename)
+            audio = AudioSegment.from_mp3(tmp_mp3_filename)
         except:
             logger.debug("MP3 read failed, trying generic file reading")
-            # audio = AudioSegment.from_file(tmp_mp3_filename)
+            audio = AudioSegment.from_file(tmp_mp3_filename)
         
         logger.debug("Setting audio frame rate and channels")
         audio = audio.set_frame_rate(VAD_SAMPLING_RATE).set_channels(1)
@@ -579,7 +574,7 @@ def generate_encouragement_prompt(conversation_history):
         """
         
         logger.debug(f"Encouragement prompt context: {prompt}")
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4-turbo",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.5,
@@ -592,32 +587,27 @@ def generate_encouragement_prompt(conversation_history):
         logger.error(f"Error generating encouragement prompt: {str(e)}", exc_info=True)
         return "Please continue with your thought."
 
+from gtts import gTTS
+import base64
+from io import BytesIO
+
 def text_to_speech(text):
     try:
         logger.debug(f"Converting text to speech: {text[:50]}...")
         tts = gTTS(text=text, lang='en', slow=False)
-        with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as temp_file:
-            temp_filename = temp_file.name
         
-        tts.save(temp_filename)
-        logger.debug(f"TTS saved to temporary file: {temp_filename}")
+        fp = BytesIO()
+        tts.write_to_fp(fp)
+        fp.seek(0)
         
-        # audio = AudioSegment.from_mp3(temp_filename)
-        wav_filename = temp_filename.replace('.mp3', '.wav')
-
-        # audio.export(wav_filename, format="wav")
-        logger.debug(f"Converted to WAV format: {wav_filename}")
+        audio_base64 = base64.b64encode(fp.read()).decode('utf-8')
+        logger.debug(f"TTS conversion completed, length: {len(audio_base64)} characters")
         
-        with open(wav_filename, 'rb') as f:
-            audio_data = f.read()
-        
-        os.unlink(temp_filename)
-        os.unlink(wav_filename)
-        logger.debug("Temporary files cleaned up")
-        return base64.b64encode(audio_data).decode('utf-8')
+        return audio_base64
     except Exception as e:
         logger.error(f"Error in text-to-speech: {str(e)}", exc_info=True)
         return None
+
 
 def process_frame_for_gpt4v(frame):
     try:
@@ -639,7 +629,7 @@ def process_frame_for_gpt4v(frame):
 def analyze_visual_response(frame_base64, conversation_context):
     try:
         logger.debug("Analyzing visual response with GPT-4V")
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4-turbo",
             messages=[
                 {
@@ -688,6 +678,87 @@ def analyze_visual_response(frame_base64, conversation_context):
             "distractions": "No visual feedback available"
         }
 
+# def evaluate_response(answer, question, difficulty_level, visual_feedback=None):
+#     if len(answer.strip()) < 20:
+#         logger.warning("Answer too short for proper evaluation")
+#         return {
+#             "technical": 2.0,
+#             "communication": 2.0,
+#             "problem_solving": 2.0,
+#             "time_management": 2.0,
+#             "overall": 2.0
+#         }
+
+#     rating_prompt = f"""
+#     Analyze this interview response for a {difficulty_level} level candidate.
+#     Question: "{question}"
+#     Answer: "{answer}"
+
+#     Provide numeric ratings from 1-10 for:
+#     - Technical Knowledge (how accurate and deep was the technical content)
+#     - Communication (clarity, organization, articulation)
+#     - Problem Solving (logical approach, creativity in solutions)
+#     - Time Management (conciseness, staying on topic)
+#     - Overall (composite score)
+
+#     Return ONLY a JSON object with these numeric ratings, nothing else.
+#     Example: {{"technical": 7.5, "communication": 5.0, "problem_solving": 6.2, "time_management": 5.8, "overall": 6.1}}
+#     """
+
+#     # try:
+#     #     logger.debug(f"Evaluating response for question: {question[:50]}...")
+#     #     logger.debug(f"Answer length: {len(answer)} characters")
+        
+#     #     response = client.chat.completions.create(
+#     #         model="gpt-4-turbo",
+#     #         messages=[{"role": "user", "content": rating_prompt}],
+#     #         temperature=0.4,
+#     #         max_tokens=200
+#     #     )
+#     #     ratings = json.loads(response.choices[0].message.content)
+#     #     logger.debug(f"Received ratings: {ratings}")
+        
+#     #     # Ensure all ratings are floats
+#     #     return {k: float(v) for k, v in ratings.items()}
+    
+#     try:
+#         logger.debug(f"Evaluating response for question: {question[:50]}...")
+#         logger.debug(f"Answer length: {len(answer)} characters")
+        
+#         response = client.chat.completions.create(
+#             model="gpt-4-turbo",
+#             messages=[{"role": "user", "content": rating_prompt}],
+#             temperature=0.4,
+#             max_tokens=200
+#         )
+
+#         content = response.choices[0].message.content.strip()
+#         logger.debug(f"Raw rating JSON from OpenAI: {content}")
+
+#         ratings = json.loads(content)
+#         logger.debug(f"Received ratings: {ratings}")
+
+#         # Ensure all ratings are floats
+#         return {k: float(v) for k, v in ratings.items()}
+
+#     except Exception as e:
+#         logger.error(f"Error evaluating response: {str(e)}")
+#         return {}
+
+    
+   
+#     except Exception as e:
+#         logger.error(f"Error evaluating response: {str(e)}", exc_info=True)
+#         return {
+#             "technical": 5.0,
+#             "communication": 5.0,
+#             "problem_solving": 5.0,
+#             "time_management": 5.0,
+#             "overall": 5.0
+#         }
+
+import re
+
 def evaluate_response(answer, question, difficulty_level, visual_feedback=None):
     if len(answer.strip()) < 20:
         logger.warning("Answer too short for proper evaluation")
@@ -719,19 +790,27 @@ def evaluate_response(answer, question, difficulty_level, visual_feedback=None):
         logger.debug(f"Evaluating response for question: {question[:50]}...")
         logger.debug(f"Answer length: {len(answer)} characters")
         
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4-turbo",
             messages=[{"role": "user", "content": rating_prompt}],
             temperature=0.4,
             max_tokens=200
         )
-        ratings = json.loads(response.choices[0].message.content)
-        logger.debug(f"Received ratings: {ratings}")
-        
+
+        content = response.choices[0].message.content.strip()
+        logger.debug(f"Raw rating JSON from OpenAI: {content}")
+
+        # Clean ```json ... ``` wrappers if present
+        content_cleaned = re.sub(r"^```json|```$", "", content, flags=re.MULTILINE).strip()
+        ratings = json.loads(content_cleaned)
+        logger.debug(f"Parsed ratings: {ratings}")
+
         # Ensure all ratings are floats
         return {k: float(v) for k, v in ratings.items()}
+
     except Exception as e:
         logger.error(f"Error evaluating response: {str(e)}", exc_info=True)
+        # Provide a neutral fallback instead of crashing
         return {
             "technical": 5.0,
             "communication": 5.0,
@@ -739,6 +818,8 @@ def evaluate_response(answer, question, difficulty_level, visual_feedback=None):
             "time_management": 5.0,
             "overall": 5.0
         }
+
+
 
 def generate_interview_report(interview_data):
     try:
@@ -1545,6 +1626,9 @@ def get_question():
         "question_number": interview_data['current_question'],
         "total_questions": len(interview_data['questions'])
     })
+
+
+
 
 @app.route('/process_answer', methods=['POST'])
 def process_answer():

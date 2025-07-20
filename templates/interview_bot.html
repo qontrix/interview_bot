@@ -1125,43 +1125,112 @@
             });
             
             // Ask the current question
-            function askQuestion() {
-                accumulatedAnswer = "";
+            // function askQuestion() {
+            //     accumulatedAnswer = "";
                 
-                $.get('/get_question', function(response) {
-                    if (response.status === 'completed') {
-                        interviewComplete();
-                    } else if (response.status === 'success') {
-                        $('#currentQuestionNum').text(response.question_number);
-                        updateProgress(response.question_number - 1, response.total_questions);
+            //     $.get('/get_question', function(response) {
+            //         if (response.status === 'completed') {
+            //             interviewComplete();
+            //         } else if (response.status === 'success') {
+            //             $('#currentQuestionNum').text(response.question_number);
+            //             updateProgress(response.question_number - 1, response.total_questions);
                         
-                        // Add question to transcript
-                        addQuestionToTranscript(response.question, response.question_number, response.total_questions);
+            //             // Add question to transcript
+            //             addQuestionToTranscript(response.question, response.question_number, response.total_questions);
                         
-                        // Play the question audio
-                        playAudio(response.audio, function() {
-                            if (autoStartRecording) {
-                                startRecording();
-                            }
-                        });
-                    }
-                }).fail(function(xhr) {
-                    alert('Error getting question: ' + (xhr.responseJSON?.message || 'Unknown error'));
-                });
+            //             // Play the question audio
+            //             playAudio(response.audio, function() {
+            //                 if (autoStartRecording) {
+            //                     startRecording();
+            //                 }
+            //             });
+            //         }
+            //     }).fail(function(xhr) {
+            //         alert('Error getting question: ' + (xhr.responseJSON?.message || 'Unknown error'));
+            //     });
+            // }
+          
+           function askQuestion() {
+    accumulatedAnswer = "";
+
+    $.get('/get_question', function(response) {
+        if (response.status === 'completed') {
+            interviewComplete();
+        } else if (response.status === 'success') {
+            $('#currentQuestionNum').text(response.question_number);
+            updateProgress(response.question_number - 1, response.total_questions);
+
+            // Add question to transcript
+            addQuestionToTranscript(response.question, response.question_number, response.total_questions);
+
+            // Ensure audio is present and log for debugging
+            if (response.audio) {
+                console.log('Received audio data for playback.');
+            } else {
+                console.warn('No audio data received for this question.');
             }
-            
+
+            // Play the question audio, then auto-start recording
+            playAudio(response.audio, function() {
+                if (autoStartRecording) {
+                    startRecording();
+                }
+            });
+        } else {
+            console.error('Unexpected response:', response);
+        }
+    }).fail(function(xhr) {
+        alert('Error getting question: ' + (xhr.responseJSON?.message || 'Unknown error'));
+    });
+}
+ 
+
+
+
+
+
             // Play audio from base64 data
-            function playAudio(base64Data, onEndedCallback) {
-                if (!base64Data) {
-                    if (onEndedCallback) onEndedCallback();
-                    return;
-                }
-                const audio = new Audio('data:audio/wav;base64,' + base64Data);
-                audio.play();
-                if (onEndedCallback) {
-                    audio.onended = onEndedCallback;
-                }
-            }
+            // function playAudio(base64Data, onEndedCallback) {
+            //     if (!base64Data) {
+            //         if (onEndedCallback) onEndedCallback();
+            //         return;
+            //     }
+            //     const audio = new Audio('data:audio/wav;base64,' + base64Data);
+            //     audio.play();
+            //     if (onEndedCallback) {
+            //         audio.onended = onEndedCallback;
+            //     }
+            // }
+           
+            // Play audio from base64 data
+function playAudio(base64Data, onEndedCallback) {
+    if (!base64Data) {
+        console.warn('No audio data received for playback.');
+        if (onEndedCallback) onEndedCallback();
+        return;
+    }
+
+    // Detect MIME type (adjust if needed)
+    const audio = new Audio('data:audio/mp3;base64,' + base64Data);
+
+    audio.play()
+        .then(() => {
+            console.log('Audio playback started.');
+        })
+        .catch(err => {
+            console.error('Error playing audio:', err);
+            if (onEndedCallback) onEndedCallback(); // fallback to continue flow
+        });
+
+    if (onEndedCallback) {
+        audio.onended = onEndedCallback;
+    }
+}
+
+
+
+
+           
             
             // Update progress display
             function updateProgress(current, total) {

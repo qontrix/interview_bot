@@ -173,3 +173,89 @@ bot: Can you tell me about a project where you had to collaborate with other dep
 user: handling the data we had to collaborate with other departments and connect with the front and back and code  at the time  we had to connect with other department
 bot: Thanks for sharing your responses so far. What excites you most about the possibility of joining our team?
 user: thank you for the interview and  company culture and also  that in this company will definitely there is the chances to get a better opportunity working project that makes that exciteing me about the possibility of joining our joining your tea
+bot: Tell us about yourself and your background.
+user: my name is Anshu I have completed my computer application  also don't my  WhatsApp master income application  hello
+bot: What programming languages are you familiar with?
+user: I am family with the PHP Java python
+bot: Explain a basic programming concept you've learned recently.
+user: I love you send you
+bot: Have you worked on any small coding projects?
+user: multiple project
+bot: Describe a time when you had to learn something new quickly.
+user: yes I learn new things quickly like I don't know
+bot: Tell us about yourself and your background.
+user: I have completed my best computer application and also have done my mastering computer application
+bot: What programming languages are you familiar with?
+user: I am compatible with PHP Java python
+bot: Explain a basic programming concept you've learned recently.
+user: machine learning language recently
+bot: Have you worked on any small coding projects?
+user: no I don't work in
+bot: Describe a time when you had to learn something new quickly.
+user: I don't know anything
+bot: Please introduce yourself.
+user: I have completed my battery incomplete application project
+bot: What qualifications do you have that make you think you will be successful?
+user: I have recently compare master in computer application  it is
+bot: Can you describe your experience with Python and provide an example of a project where you used Python for data analysis?
+user: multiple languages like multiverse Framework like
+bot: How did you ensure the accuracy and reliability of your data in that Python project?
+user: Python is the variability and accuracy in data
+bot: Have you used SQL in your previous roles to manipulate and query data? Can you give an example of a complex SQL query you have written?
+user: yes I want to SQL like 4th grade live server
+bot: What challenges did you face while writing that query and how did you overcome them?
+user: no I don't facing in Challenger during the learning
+bot: Explain how you have utilized Power BI or Tableau in your past projects to create interactive reports or dashboards.
+user: use the power bad w  create the dashboard
+bot: What specific features of Power BI or Tableau did you find most useful for your data visualization needs?
+user: like the data formation and data protection it is the weight best for the editorial
+bot: Describe a time when you had to adapt quickly to a change in project requirements. How did you handle it?
+user: I take the project on the first
+bot: Thanks for sharing your responses so far. What excites you most about the possibility of joining our team?
+user: yes I have excited to join your team
+bot: Please introduce yourself.
+user: my name is naineshwar I have completed my bachelor in computer application
+bot: What qualifications do you have that make you think you will be successful in this role?
+user: I have done the  PHP internship from me to join for taken the page with developer
+bot: Can you explain how you have used SQL in your previous data analytics role?
+user: in my previous call for data analysis like insert
+bot: Could you give an example of a complex SQL query you've written and explain what it accomplished?
+user: nsql andherizard joint statement is very complex to integrate SQ
+bot: Describe a project where you used Python libraries such as Pandas and NumPy for data analysis.
+user: Python in next I want to data reservation
+bot: What were some of the challenges you faced during this project and how did you overcome them?
+user: I used to edit the relation to welcome back multiple project challenges
+bot: Have you created dashboards in Power BI or Tableau? Please describe one of the dashboards you created.
+user: yes I have created
+bot: How did the dashboard you created help in decision-making or in achieving business objectives?
+user: I can I have created a dashboard
+bot: Tell me about a time when you had to work closely with other departments to complete a project. How did you ensure effective communication and collaboration?
+user: I complete the matter for the timing
+bot: Thanks for sharing your responses so far. Based on our conversation, how do you see yourself fitting into this role?
+user: yes I am fitting for the this is position
+bot: Can you tell me a little about yourself?
+user: hello my name is
+bot: What qualifications do you have that make you think you will be successful?
+bot: Please introduce yourself.
+bot: Please introduce yourself.
+bot: Please introduce yourself.
+bot: Can you tell me a little about yourself?
+user: yes my name is neneshwar I have completed my batsman computer application and currently working as a developer in exam
+bot: What qualifications do you have that make you think you will be successful?
+user: the master in computer application and this qualification
+bot: Can you explain what SQL functions you have used to perform data cleaning?
+user: new delete update filter this function using the data cleaning
+bot: Could you provide an example of a specific project where these functions were particularly useful?
+user: border data cleaning the test action data moving data sorting
+bot: In your experience, how have you used Python, specifically Pandas and NumPy, for data analysis?
+user: temperature in the data and releasing Python so I know I don't have any experience to 4.5 ton
+bot: Can you walk me through a basic script you wrote using these libraries that you found instrumental in a past project?
+user: I don't know  can you ask institution please
+bot: Describe your experience creating visualizations in Power BI or Tableau.
+user: so powerisation
+bot: What was the most complex visualization you have created and what was the impact of this visualization on the project or decision-making process?
+user: I develop the one project like chat list where I develop the multiple share market charts using a data reservation using power bank
+bot: Can you tell me about a time when you had to collaborate with other teams or departments to complete a project? How did you ensure effective communication and alignment?
+user: yes I complete the Voltas which is the given by the company and I stupid the that asking to the team to a completely for the time
+bot: Thanks for sharing your responses so far. What excites you most about the possibility of joining our team?
+user: I would like to join your team

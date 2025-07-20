@@ -8,3 +8,27 @@ bot: As a beginner, how would you approach troubleshooting a network issue where
 user: Yes, so basically troubleshooting SIP session involves identifying and resolving the issue that can occur during the initiation, management and termination of a communication. So there are some steps that is verifying the network connectivity analysis, IP messages, check ASAP registration. Investigate the call set of failures, median audio issues, debug SIP server configuration, test with the simplified setups tools for that troubleshooting. Monitor the performance metrics, escalate if necessary. So these are some troubleshooting steps which you have to follow and then. We should get resolved.
 bot: Describe a time when you had to learn a new technology or software tool quickly. How did you manage your learning process, and what was the outcome?
 user: Yes, so learning a new technology can seem overwhelming but it can be structured approach. So developing the right mindset is very important. Understanding the basic first, break it into managerial pass, set realistic goals, leverage resources. Practice is hands on and then learn from the others. Stay consistent, build, showcase, project and keep revising. Stay updated, overcome the challenges. But if you are feeling stuck then you have to revisit fundamental and seek further help. So this is how I can. If I learn new technology or I manage this process of learning.
+bot: Please introduce yourself.
+user: my name is naineshwar I have complete application
+bot: What qualifications do you have that make you think you will be successful?
+user: I have completed the first time from things and Technology
+bot: Can you explain the basic syntax of a SQL query to retrieve data from a single table?
+user: inside query get method
+bot: Could you give an example of a query you might use to analyze sales data?
+user: I don't know about the sense please ask me question
+bot: Describe how you would create a simple dashboard in Power BI or Tableau to display key performance indicators (KPIs).
+user: I know I don't know what is answer
+bot: What specific KPIs would you choose for a retail company, and why?
+user: I know about the sense please ask next question
+bot: How would you write a Python script to import data from a CSV file and perform basic data cleaning?
+user: I don't know Mujhe
+bot: What are some common issues you encounter with CSV data, and how do you resolve them?
+user: I don't know Mujhe Hamesha
+bot: Tell me about a time when you had to adapt quickly to a change in project requirements. How did you handle it?
+user: han Kisne
+bot: Thanks for sharing your responses so far. Is there anything else you’d like to add or share that we haven’t discussed?
+user: I don't know
+bot: Thanks for sharing your responses so far. Is there anything else you’d like to add or share that we haven’t discussed?
+user: I don't know the answer and the interview
+user: I don't know the answer and the interview is there anything else you like to add your share that we have in discussed  no
+bot: Thanks for sharing your responses so far. Is there anything else you’d like to add or share that we haven’t discussed?
