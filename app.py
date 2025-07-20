@@ -180,22 +180,31 @@ def extract_text_from_file(file):
                 text += page.extract_text()
             logger.debug(f"Extracted {len(text)} characters from PDF")
             return text
+
         elif file.filename.lower().endswith(('.doc', '.docx')):
             logger.debug("Processing Word document")
             doc = docx.Document(BytesIO(file.read()))
             text = "\n".join([para.text for para in doc.paragraphs])
             logger.debug(f"Extracted {len(text)} characters from Word document")
             return text
+
         elif file.filename.lower().endswith('.txt'):
             logger.debug("Processing text file")
-            text = file.read().decode('utf-8')
+            try:
+                text = file.read().decode('utf-8')
+            except UnicodeDecodeError:
+                logger.warning("UTF-8 decode failed, trying cp1252 decoding for JD")
+                file.seek(0)
+                text = file.read().decode('cp1252')
             logger.debug(f"Extracted {len(text)} characters from text file")
             return text
+
         else:
             logger.warning(f"Unsupported file format: {file.filename}")
             return None
+
     except Exception as e:
-        logger.error(f"Error extracting text from file: {str(e)}")
+        logger.error(f"Error extracting text from file: {str(e)}", exc_info=True)
         return None
 
 import subprocess
